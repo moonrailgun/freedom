@@ -2,8 +2,13 @@ import * as React from 'react';
 import './App.css';
 
 import logo from './logo.svg';
+import { GameStage } from 'types/stage';
 
 class App extends React.Component {
+  state = {
+    stage: GameStage.Launchpad,
+  };
+
   public render() {
     return (
       <div className="App">
