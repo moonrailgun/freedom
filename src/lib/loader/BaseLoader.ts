@@ -1,5 +1,7 @@
-export class BaseLoader<T> {
-  components: T[];
+export class BaseLoader<ElementType> {
+  elements: ElementType[];
 
-  register() {}
+  register(element: ElementType): void {
+    this.elements.push(element);
+  }
 }
