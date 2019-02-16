@@ -3,9 +3,9 @@ import * as ReactDOM from 'react-dom';
 import App from './App';
 import './index.css';
 import registerServiceWorker from './registerServiceWorker';
+import { GameManager } from './lib/GameManager';
 
-ReactDOM.render(
-  <App />,
-  document.getElementById('root') as HTMLElement
-);
+window.GameManager = new GameManager();
+
+ReactDOM.render(<App />, document.getElementById('root') as HTMLElement);
 registerServiceWorker();
