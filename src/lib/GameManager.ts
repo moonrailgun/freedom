@@ -3,7 +3,11 @@ import { BaseLoader } from './loader/BaseLoader';
 // type Loader = any extends BaseLoader;
 
 export class GameManager {
-  loaders: any[] = [];
+  loaders = {};
 
-  registerLoader(loader: any) {}
+  registerLoader(name: string, loader: any) {}
+
+  getLoader(name: string) {
+    return this.loaders[name] || null;
+  }
 }

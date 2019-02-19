@@ -1,7 +1,7 @@
 export class BaseLoader<ElementType> {
   elements: ElementType[];
 
-  register(element: ElementType): void {
+  register(from: string, element: ElementType): void {
     this.elements.push(element);
   }
 }
