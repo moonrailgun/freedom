@@ -8,24 +8,24 @@ interface ILoaderList {
 }
 
 export class GameManager {
-  loaders: ILoaderList = {};
+  private loaders: ILoaderList = {};
 
   constructor() {
     this.initBuildingLoader();
   }
 
-  initBuildingLoader() {
+  public initBuildingLoader() {
     this.registerLoader(UILoader);
   }
 
-  registerLoader(Loader: any) {
+  public registerLoader(Loader: any) {
     const loader = new Loader();
     const name = loader.name;
 
     this.loaders[name] = loader;
   }
 
-  getLoader<E>(name: string): BaseLoader<E> {
+  public getLoader<E>(name: string): BaseLoader<E> {
     return this.loaders[name] || null;
   }
 }

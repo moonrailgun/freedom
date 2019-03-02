@@ -1,5 +1,5 @@
-export interface BaseElemet {
+export interface IBaseElemet {
   name: string;
 }
 
-export type UIElement = BaseElemet & {};
+export type UIElement = IBaseElemet & {};

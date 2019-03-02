@@ -2,5 +2,5 @@ import { BaseLoader } from './BaseLoader';
 import { UIElement } from 'types/loader';
 
 export class UILoader extends BaseLoader<UIElement> {
-  name = 'ui';
+  public name = 'ui';
 }

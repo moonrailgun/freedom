@@ -8,11 +8,11 @@ export class BaseModule {
   // model依赖
   public requireModel: string[] = [];
 
-  onLoad() {}
+  public onLoad() {}
 
-  onRegister() {}
+  public onRegister() {}
 
-  register(loaderName: string, info: any) {
+  public register(loaderName: string, info: any) {
     const loader = window.GameManager.getLoader(loaderName);
     loader.register(this.modelName, info);
   }

@@ -1,26 +1,20 @@
 import * as React from 'react';
 import './App.css';
 
-import logo from './logo.svg';
 import { GameStage } from 'types/stage';
+import { Launchpad } from './ui/stages/Launchpad';
 
 class App extends React.Component {
-  state = {
+  public state = {
     stage: GameStage.Launchpad,
   };
 
   public render() {
-    return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h1 className="App-title">Welcome to React</h1>
-        </header>
-        <p className="App-intro">
-          To get started, edit <code>src/App.tsx</code> and save to reload.
-        </p>
-      </div>
-    );
+    if (this.state.stage === GameStage.Launchpad) {
+      return <Launchpad />;
+    }
+
+    return <div>error</div>;
   }
 }
 

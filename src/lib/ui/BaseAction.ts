@@ -4,13 +4,13 @@ export class BaseAction {
   public label: string = '';
   public type: ActionType = ActionType.Button;
 
-  action(): void {}
+  public action(): void {}
 
-  visibility(): boolean {
+  public visibility(): boolean {
     return true;
   }
 
-  disabled(): boolean {
+  public disabled(): boolean {
     return true;
   }
 }

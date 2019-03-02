@@ -6,8 +6,8 @@ export interface ILoader<ElementType> {
 }
 
 export class BaseLoader<ElementType> implements ILoader<ElementType> {
-  name: string;
-  elements: ElementType[] = [];
+  public name: string;
+  public elements: ElementType[] = [];
 
   constructor() {
     if (!this.name) {
@@ -15,7 +15,7 @@ export class BaseLoader<ElementType> implements ILoader<ElementType> {
     }
   }
 
-  register(from: string, element: ElementType): void {
+  public register(from: string, element: ElementType): void {
     log(`load element from ${from}`);
     this.elements.push(element);
   }
