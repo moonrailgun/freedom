@@ -20,10 +20,21 @@
     "noUnusedLocals": true,
     "paths": {
       "types/*": ["src/types/*"]
-    }
+    },
+    "types": [
+      "react",
+      "react-dom",
+      "lodash",
+      "jest",
+      "jest-diff",
+      "debug",
+      "node",
+      "styled-components",
+    ]
   },
   "exclude": [
     "node_modules",
+    "**/node_modules/*",
     "build",
     "scripts",
     "acceptance-tests",
