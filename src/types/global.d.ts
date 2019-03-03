@@ -2,6 +2,6 @@ import { GameManager } from '../lib/GameManager';
 
 declare global {
   interface Window {
-    GameManager: GameManager;
+    gameManager: GameManager;
   }
 }

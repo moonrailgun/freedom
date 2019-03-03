@@ -1,4 +1,4 @@
-import { BaseModule } from 'src/lib/BaseModule';
+import { BaseModule } from 'lib/modules/BaseModule';
 import { AvatarElement } from './ui/Avatar';
 const GameManager = window.GameManager;
 
