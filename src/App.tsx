@@ -2,7 +2,7 @@ import * as React from 'react';
 import './App.css';
 
 import { GameStage } from 'types/stage';
-import { Launchpad } from './ui/stages/Launchpad';
+import { Launchpad } from './lib/stages/Launchpad';
 
 class App extends React.Component {
   public state = {
