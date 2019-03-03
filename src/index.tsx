@@ -5,7 +5,7 @@ import './index.css';
 import { GameManager } from './lib/GameManager';
 import registerServiceWorker from './registerServiceWorker';
 
-window.GameManager = new GameManager();
+window.gameManager = new GameManager();
 
 ReactDOM.render(<App />, document.getElementById('root') as HTMLElement);
 registerServiceWorker();

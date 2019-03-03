@@ -9,6 +9,10 @@ class App extends React.Component {
     stage: GameStage.Launchpad,
   };
 
+  public componentDidMount() {
+    window.gameManager.getLoader('stage');
+  }
+
   public render() {
     if (this.state.stage === GameStage.Launchpad) {
       return <Launchpad />;

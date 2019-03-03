@@ -14,4 +14,8 @@ export abstract class BaseLoader<ElementType> implements ILoader<ElementType> {
     log(`load element from ${from}`);
     this.elements.push(element);
   }
+
+  public getElements() {
+    return this.elements;
+  }
 }

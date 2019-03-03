@@ -1,7 +1,7 @@
-import { BaseLoader } from './loader/BaseLoader';
-import { UILoader } from './loader/UILoader';
-
-// type Loader = any extends BaseLoader;
+import { BaseLoader } from 'lib/loader/BaseLoader';
+import { StageLoader } from 'lib/loader/StageLoader';
+import { UILoader } from 'lib/loader/UILoader';
+import { ILoaderClass } from 'types/loader';
 
 interface ILoaderList {
   [name: string]: BaseLoader<any>;
@@ -16,9 +16,10 @@ export class GameManager {
 
   public initBuildingLoader() {
     this.registerLoader(UILoader);
+    this.registerLoader(StageLoader);
   }
 
-  public registerLoader(Loader: any) {
+  public registerLoader(Loader: ILoaderClass) {
     const loader = new Loader();
     const name = loader.name;
 
