@@ -2,9 +2,9 @@ import debug from 'debug';
 import { IBaseElement } from 'types/loader';
 const log = debug('freedom:loader');
 
-export interface ILoader<ElementType extends IBaseElement> {
+export interface ILoader<E extends IBaseElement> {
   name: string;
-  register(element: ElementType): void;
+  register(element: E): void;
 }
 
 export abstract class BaseLoader<E extends IBaseElement> implements ILoader<E> {

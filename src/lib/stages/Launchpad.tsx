@@ -1,6 +1,5 @@
 import * as React from 'react';
 import styled from 'styled-components';
-import { StageElement } from 'types/loader';
 import { BaseStage } from './BaseStage';
 
 const Root = styled.div`

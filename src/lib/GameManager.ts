@@ -1,7 +1,7 @@
 import { BaseLoader } from 'lib/loader/BaseLoader';
 import { StageLoader } from 'lib/loader/StageLoader';
 import { UILoader } from 'lib/loader/UILoader';
-import { ILoaderClass } from 'types/loader';
+import { IBaseElement, ILoaderClass } from 'types/loader';
 
 interface ILoaderList {
   [name: string]: BaseLoader<any>;
@@ -26,7 +26,7 @@ export class GameManager {
     this.loaders[name] = loader;
   }
 
-  public getLoader<E>(name: string): BaseLoader<E> {
+  public getLoader<E extends IBaseElement>(name: string): BaseLoader<E> {
     return this.loaders[name] || null;
   }
 }
