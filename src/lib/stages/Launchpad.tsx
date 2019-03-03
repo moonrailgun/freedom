@@ -1,5 +1,7 @@
 import * as React from 'react';
 import styled from 'styled-components';
+import { StageElement } from 'types/loader';
+import { BaseStage } from './BaseStage';
 
 const Root = styled.div`
   width: 100%;
@@ -53,8 +55,14 @@ const Actions = styled.div`
   }
 `;
 
-export class Launchpad extends React.Component {
-  public render() {
+export class LaunchpadStage implements BaseStage {
+  public name = 'LaunchpadStage';
+
+  public getNextStage() {
+    return null;
+  }
+
+  public getView() {
     return (
       <Root>
         <Title>Freedom - 自由</Title>

@@ -1,9 +1,13 @@
-export abstract class BaseStage {
-  // 返回下一个jsx
-  public getNextStage() {
+import { StageElement } from 'types/loader';
+
+export abstract class BaseStage implements StageElement {
+  public name = 'Stage';
+
+  public getNextStage(): string | null {
     return null;
   }
 
-  // 渲染的jsx
-  public render() {}
+  public getView(): JSX.Element | null {
+    return null;
+  }
 }

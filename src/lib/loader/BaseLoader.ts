@@ -1,16 +1,18 @@
 import debug from 'debug';
+import { IBaseElement } from 'types/loader';
 const log = debug('freedom:loader');
 
-export interface ILoader<ElementType> {
+export interface ILoader<ElementType extends IBaseElement> {
   name: string;
-  register(from: string, element: ElementType): void;
+  register(element: ElementType): void;
 }
 
-export abstract class BaseLoader<ElementType> implements ILoader<ElementType> {
+export abstract class BaseLoader<E extends IBaseElement> implements ILoader<E> {
   public abstract name: string;
-  public elements: ElementType[] = [];
+  public elements: E[] = [];
 
-  public register(from: string, element: ElementType): void {
+  public register(element: E): void {
+    const from = element.name;
     log(`load element from ${from}`);
     this.elements.push(element);
   }

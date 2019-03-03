@@ -11,5 +11,6 @@ export interface IBaseElement {
 export type UIElement = IBaseElement & {};
 
 export type StageElement = IBaseElement & {
-  nextStage: string;
+  getNextStage(): string | null;
+  getView(): JSX.Element | null;
 };
