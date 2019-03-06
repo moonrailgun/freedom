@@ -11,7 +11,7 @@ class App extends React.Component {
   };
 
   public componentDidMount() {
-    this.stageLoader = window.gameManager.getLoader('stage') as StageLoader;
+    this.stageLoader = window.gameManager.getLoader<StageLoader>('stage');
     this.setState({
       stage: this.stageLoader.getFirstStage(),
     });

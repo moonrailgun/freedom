@@ -27,8 +27,11 @@ export class GameManager {
     this.loaders[name] = loader;
   }
 
-  public getLoader<E extends IBaseElement>(name: string): BaseLoader<E> {
-    const loader = this.loaders[name] as BaseLoader<E>;
+  public getLoader<
+    T extends BaseLoader<E>,
+    E extends IBaseElement = IBaseElement
+  >(name: string): T {
+    const loader = this.loaders[name] as T;
     return loader || null;
   }
 }

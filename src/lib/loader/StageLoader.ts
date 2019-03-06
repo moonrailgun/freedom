@@ -1,4 +1,5 @@
 import { LaunchpadStage } from 'lib/stages/Launchpad';
+import * as _ from 'lodash';
 import { StageElement } from 'types/loader';
 import { BaseLoader } from './BaseLoader';
 
@@ -12,6 +13,11 @@ export class StageLoader extends BaseLoader<StageElement> {
   }
 
   public getFirstStage(): StageElement {
-    return this.elements[0];
+    const elements = this.getElements();
+    return elements[0];
+  }
+
+  public getElements() {
+    return _.sortBy(this.elements, ['order']);
   }
 }
