@@ -1,3 +1,5 @@
+import { IBaseElement } from 'types/loader';
+
 export class BaseModule {
   // model名, model的唯一标识
   public modelName: string = 'basicModule';
@@ -12,8 +14,8 @@ export class BaseModule {
 
   public onRegister() {}
 
-  public register(loaderName: string, info: any) {
-    const loader = window.GameManager.getLoader(loaderName);
-    loader.register(this.modelName, info);
+  public register(loaderName: string, info: IBaseElement) {
+    const loader = window.gameManager.getLoader(loaderName);
+    loader.register(info);
   }
 }

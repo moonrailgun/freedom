@@ -1,24 +1,29 @@
 import * as React from 'react';
 import './App.css';
 
-import { GameStage } from 'types/stage';
-import { Launchpad } from './lib/stages/Launchpad';
+import { StageLoader } from 'lib/loader/StageLoader';
+import { StageElement } from 'types/loader';
 
 class App extends React.Component {
+  public stageLoader: StageLoader;
   public state = {
-    stage: GameStage.Launchpad,
+    stage: null,
   };
 
   public componentDidMount() {
-    window.gameManager.getLoader('stage');
+    this.stageLoader = window.gameManager.getLoader('stage') as StageLoader;
+    this.setState({
+      stage: this.stageLoader.getFirstStage(),
+    });
   }
 
   public render() {
-    if (this.state.stage === GameStage.Launchpad) {
-      return <Launchpad />;
+    const stage = this.state.stage;
+    if (stage) {
+      return (stage as StageElement).getView();
     }
 
-    return <div>error</div>;
+    return null;
   }
 }
 

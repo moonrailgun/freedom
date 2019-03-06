@@ -56,6 +56,7 @@ const Actions = styled.div`
 
 export class LaunchpadStage implements BaseStage {
   public name = 'LaunchpadStage';
+  public order = 10;
 
   public getNextStage() {
     return null;

@@ -1,10 +1,11 @@
 import { BaseLoader } from 'lib/loader/BaseLoader';
 import { StageLoader } from 'lib/loader/StageLoader';
 import { UILoader } from 'lib/loader/UILoader';
+import { get as _get } from 'lodash';
 import { IBaseElement, ILoaderClass } from 'types/loader';
 
 interface ILoaderList {
-  [name: string]: BaseLoader<any>;
+  [name: string]: BaseLoader<IBaseElement>;
 }
 
 export class GameManager {
@@ -27,6 +28,7 @@ export class GameManager {
   }
 
   public getLoader<E extends IBaseElement>(name: string): BaseLoader<E> {
-    return this.loaders[name] || null;
+    const loader = this.loaders[name] as BaseLoader<E>;
+    return loader || null;
   }
 }
