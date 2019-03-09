@@ -54,13 +54,8 @@ const Actions = styled.div`
   }
 `;
 
-export class LaunchpadStage implements BaseStage {
+export class LaunchpadStage extends BaseStage {
   public name = 'LaunchpadStage';
-  public order = 10;
-
-  public getNextStage() {
-    return null;
-  }
 
   public getView() {
     return (
