@@ -63,11 +63,13 @@ export class LaunchpadStage extends BaseStage {
         <Title>Freedom - 自由</Title>
         <Verison>v0.0.1</Verison>
         <Actions>
-          <button>开始</button>
+          <button onClick={this.onStart}>开始</button>
           <button>继续</button>
           <button>退出</button>
         </Actions>
       </Root>
     );
   }
+
+  protected onStart = () => {};
 }

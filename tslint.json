@@ -10,6 +10,13 @@
   "rules": {
     "no-empty": false,
     "max-classes-per-file": false,
-    "no-console": false
+    "no-console": false,
+    "jsx-no-lambda": false,
+    "variable-name": [
+      true,
+      "ban-keywords",
+      "check-format",
+      "allow-leading-underscore"
+    ]
   }
 }
