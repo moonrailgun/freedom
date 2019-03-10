@@ -6,7 +6,7 @@ export type ILoaderClass<
 
 export interface IBaseElement {
   name: string;
-  onLoad(): void; // 全部注册完毕之后执行onLoad
+  onLoad?(): void; // 全部注册完毕之后执行onLoad
 }
 
 export type UIElement = IBaseElement & {};
